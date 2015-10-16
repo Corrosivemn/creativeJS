@@ -8,12 +8,12 @@ setInterval(frame,30);
 function frame(){
 	//alert("Test");
 	var blob = {
-        x:500,
-		y:250,
-		xSpeed:random(-50,50)/10,
+        x:random(0,1000),
+		y:0,
+		xSpeed:0,
 		ySpeed:random(-50,50)/10,
-		size:30,
-		sizeIncrease:1.01,
+		size:10,
+		sizeIncrease:1.001,
         colour:getRandomColor()
     };
 			
