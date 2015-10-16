@@ -3,18 +3,6 @@ var ctx = c.getContext("2d");
 var blobArray = [];
 var g = 9.81;
 
-var blob = {
-        x:500,
-		y:250,
-		xSpeed:random(-50,50)/10,
-		ySpeed:random(-50,50)/10,
-		size:30,
-		sizeIncrease:1.01,
-        colour:'black'
-    };
-
-blobArray.push(blob);
-text = document.getElementById("t1");
 setInterval(frame,30);
 		
 function frame(){
