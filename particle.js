@@ -14,7 +14,7 @@ function frame(){
 		ySpeed:random(-50,50)/10,
 		size:30,
 		sizeIncrease:1.01,
-        colour:'cyan'
+        colour:getRandomColor()
     };
 			
 	blobArray.push(blob);
@@ -30,9 +30,9 @@ function frame(){
 		//check to see if touching floor
 		if(blob.y >=500){blob.ySpeed = 0 - blob.ySpeed/1.1;}
         
-		if(blob.x <= 0){blob.xSpeed-= 2 * blob.xSpeed;}
+		if(blob.x <= 0){blob.xSpeed = -blob.xSpeed;}
         
-		if(blob.x >= 1000){blob.xSpeed-= 2 * blob.xSpeed;}
+		if(blob.x >= 1000){blob.xSpeed = -blob.xSpeed;}
         
 		blob.ySpeed += g/100;
 		blob.x += blob.xSpeed;
@@ -44,4 +44,13 @@ function frame(){
 	
 function random(min,max){
 		return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
