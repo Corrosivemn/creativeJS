@@ -34,19 +34,22 @@ function frame(){
 	ctx.clearRect(0,0,1000,500);
 
 	for(var i = 0; i <= blobArray.length; i++){
-        rect = blobArray[i]
+        blob = blobArray[i]
 				
-		ctx.fillStyle = 'cyan';
-		ctx.fillRect(rect.x,rect.y,rect.size,rect.size);
+		ctx.fillStyle = blob.colour;
+		ctx.fillRect(blob.x,blob.y,blob.size,blob.size);
 				
 		//check to see if touching floor
-		if(rect.y >=500){rect.ySpeed = 0 - rect.ySpeed;}
-		if(rect.x <= 0){rect.xSpeed-= 2 * rect.xSpeed;}
-		if(rect.x >= 1000){rect.xSpeed-= 2 * rect.xSpeed;}
-		rect.ySpeed += g/100;
-		rect.x += rect.xSpeed;
-		rect.y += rect.ySpeed;
-        rect.size /= rect.sizeIncrease;
+		if(blob.y >=500){blob.ySpeed = 0 - blob.ySpeed/1.1;}
+        
+		if(blob.x <= 0){blob.xSpeed-= 2 * blob.xSpeed;}
+        
+		if(blob.x >= 1000){blob.xSpeed-= 2 * blob.xSpeed;}
+        
+		blob.ySpeed += g/100;
+		blob.x += blob.xSpeed;
+		blob.y += blob.ySpeed;
+        blob.size /= blob.sizeIncrease;
 	}
 
 }
